@@ -1,0 +1,25 @@
+{% extends 'final/base.html' %}
+
+{% block title %}
+テキストファイルの類似度計算
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <div class="pt-5">
+            <h1 class="pt-5 pb-3">画像をアップロードし保存する</h1>
+            <h3 class="pb-3" id="file_update">ファイルをアップロード</h3>
+            <form class="" action="" method="POST" name="hoge" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <p>{{ save_img }}</p>
+                <div class="row col-6 mx-auto mt-4 mb-1">
+                    <button type="submit" onclick="check()" class='btn btn-primary mb-3' id='this'>送信</button>
+                </div>
+            </form><br>
+        </div>
+    </div>
+
+</main>
+{% endblock %}

@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Noto Sans JP;
+  background-color: #e8ecef;
+  vertical-align: middle;
+  min-height: 100%;
+}
+
+.nav-original {
+  background-color: #607D8B;
+}
+
+.navbar-light .navbar-brand, .navbar-light .navbar-collapse .nav-link {
+  color: white;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.account-field {
+  text-align: center;
+}
+
+.footer-original {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.drawer-nav {
+  color: #FFF;
+  background-color: #607D8B;
+}
+
+.drawer-brand, .drawer-menu-item {
+  color: #FFF;
+}
+
+.fs-lilita-one {
+  font-family: 'Lilita One', cursive;
+}
+
+.inline-contents {
+  display: flex;
+}
+
+.fs-5em {
+  font-size: 5em;
+}
+
+.footer{
+  background-color: #607D8B;
+}
+
+.footer .container {
+  color: white;
+}
+
+/*# sourceMappingURL=common.css.map */

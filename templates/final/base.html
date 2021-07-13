@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet"  type=text/css href="{% static 'css/common.css' %}">
+    <link rel="stylesheet" type=text/css href="{% static 'css/sticky-header.css' %}">
+</head>
+
+<body class="d-flex flex-column h-100 ">
+    <div class="container">
+        <header>
+            <nav class="px-md-5 navbar navbar-expand-md fixed-top navbar-dark bg-dark mb-md-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-center" href="">時空間<br>データベース</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="
+                #navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="navbar-nav me-auto">
+                            <a id="menu_search" class="nav-item nav-link" href="/index/">ファイルのアップロード</a>
+                            <a id="menu_how_to_use" class="nav-item nav-link"
+                                href="/index2/">アップロードした写真の表示</a>
+                                <a class="nav-item nav-link" href="/upload_2"></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+        <div class="text-center">
+            <span class="text-muted">
+                &copy; 2021 Masanori Sawada.&nbsp;<br>
+            </span>
+        </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+        integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+        async></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    {% block javascript %}
+    {% endblock %}
+</body>
+
+</html>

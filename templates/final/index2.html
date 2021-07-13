@@ -1,0 +1,31 @@
+{% extends 'final/base.html' %}
+
+{% block title %}
+テキストファイルの類似度計算
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <div class="pt-5"></div>
+        <div class="row">
+            {% for time_space in object_list %}
+            <div class="col-md-4">
+                <div class="card">
+                    <img class='img-fluid' src="/media/{{time_space.image}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ time_space.name }}</h5>
+                        <p class="card-text"><a
+                                href="https://www.google.com/maps/search/?api=1&query={{time_space.lat}},{{time_space.lon}}">緯度:{{time_space.lat }}</a></p>
+                        <p class="card-text"><a
+                                href="https://www.google.com/maps/search/?api=1&query={{time_space.lat}},{{time_space.lon}}">経度:{{time_space.lon }}</a></p>
+                        <p class="card-text">詳細:{{ time_space.chat }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+</main>
+{% endblock content %}
