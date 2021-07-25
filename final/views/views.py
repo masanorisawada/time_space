@@ -1,4 +1,5 @@
-from test import exif_
+from .pictureexif import exif_
+from .GeneticAlgorithm import DIST_GA
 from django.shortcuts import render
 from .pictureexif import *
 from django.views.generic import TemplateView, FormView, ListView, UpdateView, DeleteView
@@ -34,3 +35,22 @@ class LocalView(FormView):
 class HyouziView(ListView):
     template_name = 'final/index2.html'
     model = PlaceData
+
+class GeneticView(ListView):
+    template_name = 'final/index3.html'
+    model = PlaceData
+    def get_queryset(self):
+        spot_list = []
+        list_ = []
+        spot = []
+        placedata = PlaceData.objects.all()
+        lon = PlaceData.objects.values_list("lon", flat=True)
+        lat = PlaceData.objects.values_list("lat", flat=True)
+        for u,i in zip(lon,lat):
+            list_.append([u,i])
+        GA = DIST_GA(len(list_), list_)
+        spot_list = GA.main()
+        for unko in spot_list:
+            spot.append(placedata[unko])
+        print('----------',spot)
+        return spot
